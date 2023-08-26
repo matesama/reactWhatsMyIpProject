@@ -1,7 +1,0 @@
-name: Variable for github pages
-
-  on: workflow_dispatch
-  
-  env: 
-    VITE_KEY: ${{ secrets.VITE_KEY }}
-    VITE_COUNTRYLAYER_KEY: ${{ secrets.VITE_COUNTRYLAYER_KEY }}
