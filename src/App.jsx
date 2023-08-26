@@ -7,6 +7,7 @@ import Map from "./components/Map";
 import CountryInformation from './components/CountryInformation';
 import CountryFlag from './components/countryFlag';
 import Time from "./components/Time";
+import OtherTime from './components/OtherTime';
 import LoadingButton from './components/LoadingButton';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
@@ -23,7 +24,7 @@ function App() {
   const [countryCode, setCountryCode] = useState("");
   const [ipButton, setIpButton] = useState(false);
 
-  
+
   const fetchIp = async () => {
     try {
       const key = import.meta.env.VITE_KEY;
@@ -72,7 +73,7 @@ function App() {
       <Row>
         <Col><CountryInformation countryCode={countryCode}/></Col>
         <Col><Time countryCode={countryCode}/></Col>
-        <Col>3 of 3</Col>
+        <Col><OtherTime countryCode={countryCode} /></Col>
       </Row>
     </Container>
         

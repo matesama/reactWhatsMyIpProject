@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
-const Time = ({countryCode}) => {
+
+const OtherTime = ({countryCode}) => {
     const [localClock, setLocalClock] = useState("")
     const [colClock, setColClock] = useState("")
 
@@ -31,11 +32,12 @@ const Time = ({countryCode}) => {
     useEffect(() => {
         const timer = setInterval(tickTock, 1000);
         return() => clearInterval(timer)
-    }, [localClock])
+    }, [colClock])
+    
     
     useEffect(() => {
-        console.log("localClock updated", localClock)
-    }, [localClock])
+        console.log("colClock updated", colClock)
+    }, [colClock])
     
 
 
@@ -45,16 +47,16 @@ const Time = ({countryCode}) => {
 
 
     return( <div>
-        <Card className="localDateInformation" style={{ width: '18rem' }}>
-            <Card.Title>Local Date in {countryCode.countryCode}:</Card.Title>
+            <Card className="otherDateInformation" style={{ width: '18rem' }}>
+            <Card.Title>Date in CO:</Card.Title>
+            <Card.Img variant="top" src={`https://flagsapi.com/CO/flat/64.png`} />
             <ListGroup variant="flush">
             <ListGroup.Item>Date: {localDate}</ListGroup.Item>
-            <ListGroup.Item>Time: {localClock}</ListGroup.Item>
+            <ListGroup.Item>Time: {colClock}</ListGroup.Item>
             </ListGroup>
         </Card>
         </div>
     )
 }
 
-
-export default Time;
+export default OtherTime;
