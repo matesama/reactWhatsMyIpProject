@@ -51,8 +51,8 @@ function App() {
 
   return (
     <>
-      <div>
-      <Container>
+      <div >
+      <Container className="full">
       <Row>
       <Col><h1>What´s my IP</h1></Col>  
       </Row>

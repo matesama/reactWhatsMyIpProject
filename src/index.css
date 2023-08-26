@@ -63,6 +63,11 @@ button:focus-visible {
   color: #0052CC;
 }
 
+.full {
+  border: 5px solid black;
+  border-radius: 5%;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
