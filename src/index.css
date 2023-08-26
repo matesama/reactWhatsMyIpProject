@@ -29,6 +29,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #9dc0de;
+  background-color: #9dc0de;
+  background-color: #d3f0fc;  
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #d3f0fc 4px ), repeating-linear-gradient( #45d2e955, #45d2e9 );
 }
 
 h1 {
