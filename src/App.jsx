@@ -7,13 +7,23 @@ import Map from "./components/Map";
 import CountryInformation from './components/CountryInformation';
 import CountryFlag from './components/countryFlag';
 import Time from "./components/Time";
+import LoadingButton from './components/LoadingButton';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
 
 function App() {
   const [address, setAddress] = useState(""); 
   const [lat, setLat] = useState(0);
   const [lng, setLng] = useState(0);
   const [countryCode, setCountryCode] = useState("");
+  const [ipButton, setIpButton] = useState(false);
 
+  
   const fetchIp = async () => {
     try {
       const key = import.meta.env.VITE_KEY;
@@ -41,15 +51,36 @@ function App() {
   return (
     <>
       <div>
-        <h1>What´s my Ip?</h1>
-
-        <p>My Ip address is: {address}</p>
+      <Container>
+      <Row>
+      <Col><h1>What´s my IP</h1></Col>  
+      </Row>
+      <Row>
+        <Col><LoadingButton setIpButton={setIpButton}/>
+        {ipButton ? 
+        <h3 className="ipDisplayed">My Ip address is: {address}</h3> : null
+        }
+        </Col>
+      </Row>
+      <Row>
+        <Col>
         {lat !== 0 && lng !== 0 ?  
         <Map lat={lat} lng={lng}  />
         : null}
-        <CountryInformation countryCode={countryCode}/>
-        <CountryFlag countryCode={countryCode}/>
-        <Time countryCode={countryCode}/>
+        </Col>
+      </Row>
+      <Row>
+        <Col><CountryInformation countryCode={countryCode}/></Col>
+        <Col><Time countryCode={countryCode}/></Col>
+        <Col>3 of 3</Col>
+      </Row>
+    </Container>
+        
+        
+        
+        
+       {/* <CountryFlag countryCode={countryCode}/>*/}
+        
       </div>
   
     </>

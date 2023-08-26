@@ -1,5 +1,8 @@
 import {DateTime} from "luxon";
 import {useState, useEffect} from "react";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 const Time = (countryCode) => {
     const [localClock, setLocalClock] = useState("")
@@ -28,7 +31,7 @@ const Time = (countryCode) => {
     useEffect(() => {
         const timer = setInterval(tickTock, 1000);
         return() => clearInterval(timer)
-    }, [])
+    }, [localClock, colClock])
     
     useEffect(() => {
         console.log("localClock updated", localClock)
@@ -52,10 +55,22 @@ const Time = (countryCode) => {
 
 
     return( <div>
-        <p>Date in {countryCode.countryCode}: {localDate}</p>
-        <p>Time in {countryCode.countryCode}: {localClock}</p>
-        <img src={`https://flagsapi.com/CO/flat/64.png`} />
-        <p>Time in CO: {colClock}</p>
+        <Card className="localDateInformation" style={{ width: '18rem' }}>
+            <Card.Title>Local Date in {countryCode.countryCode}:</Card.Title>
+            <ListGroup variant="flush">
+            <ListGroup.Item>Date: {localDate}</ListGroup.Item>
+            <ListGroup.Item>Time: {localClock}</ListGroup.Item>
+            </ListGroup>
+        </Card>
+
+        <Card className="otherDateInformation" style={{ width: '18rem' }}>
+            <Card.Title>Date in CO:</Card.Title>
+            <Card.Img variant="top" src={`https://flagsapi.com/CO/flat/64.png`} />
+            <ListGroup variant="flush">
+            <ListGroup.Item>Date: {localDate}</ListGroup.Item>
+            <ListGroup.Item>Time: {colClock}</ListGroup.Item>
+            </ListGroup>
+        </Card>
         </div>
     )
 }

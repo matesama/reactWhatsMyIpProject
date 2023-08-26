@@ -1,5 +1,7 @@
 import {useState, useEffect} from "react";
 import axios from "axios";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const CountryInformation =  ({countryCode}) => {
     const [countryData, setCountryData] = useState([]);
@@ -40,12 +42,15 @@ const CountryInformation =  ({countryCode}) => {
         <div>
         {Object.keys(countryInformation).length > 0
         ?
-        <div>
-        <h2>Country Information:</h2>
-        <p>Name: {specificCountryInformation.name}</p>
-        <p>Region: {specificCountryInformation.region}</p>
-        <p>Capital: {specificCountryInformation.capital}</p>
-        </div>
+        <Card className="countryInformation" style={{ width: '18rem' }}>
+            <Card.Title>Country Information:</Card.Title>
+            <Card.Img variant="top" src={`https://flagsapi.com/${countryCode}/flat/64.png`} />
+            <ListGroup variant="flush">
+            <ListGroup.Item>Name: {specificCountryInformation.name}</ListGroup.Item>
+            <ListGroup.Item>Region: {specificCountryInformation.region}</ListGroup.Item>
+            <ListGroup.Item>Capital: {specificCountryInformation.capital}</ListGroup.Item>
+            </ListGroup>
+        </Card>
         : null}
         </div>
         );
