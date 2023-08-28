@@ -54,6 +54,7 @@ function App() {
       <div >
       <Container className="full">
       <Row>
+      <Col><p>test</p></Col> 
       <Col><h1>What´s my IP</h1></Col>  
       </Row>
       <Row>

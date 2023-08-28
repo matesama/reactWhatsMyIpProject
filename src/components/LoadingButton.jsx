@@ -9,16 +9,15 @@ function LoadingButton({setIpButton}) {
 
   const handleClick = () => {
     setLoading(!isLoading);
-    
+    setIpButton(isLoading);
 
   } 
-  setIpButton(isLoading);
+ 
   
   return (
     <Button
       variant="primary"
       size="lg"
-      visible={isLoading}
       onClick={handleClick}
     >
       MY IP ADDRESS
