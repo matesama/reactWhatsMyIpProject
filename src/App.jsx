@@ -30,7 +30,7 @@ function App() {
       const key = import.meta.env.VITE_KEY;
       
       const getIp = await axios.get(`https://geo.ipify.org/api/v1?apiKey=${key}`);
-     console.log(getIp);
+     
 
       if(!getIp) throw new Error(`Fetching data failed, due to ${getIp.status}`);
       const response = getIp.data.ip;
@@ -53,8 +53,7 @@ function App() {
     <>
       <div >
       <Container className="full">
-      <Row>
-      <Col><p>test</p></Col> 
+      <Row> 
       <Col><h1>What´s my IP</h1></Col>  
       </Row>
       <Row>

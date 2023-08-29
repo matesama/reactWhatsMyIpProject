@@ -14,15 +14,13 @@ const OtherTime = ({countryCode}) => {
     const clock = localTime.toLocaleString({hour: 'numeric', minute: 'numeric', second: 'numeric'})
     
     const localDate = DateTime.now().toFormat('MM-dd-yyyy')
-    console.log(localDate)
-    console.log(clock);
 
     //Time in an other place with another Timezone:
     let zone = "America/Bogota";
     let dateTimes = DateTime.fromObject({}, {zone});
     //console.log("Current Date", dateTimes.toISO());
     const clockOtherTimezone = dateTimes.toLocaleString({hour: 'numeric', minute: 'numeric', second: 'numeric'})
-    console.log(clockOtherTimezone);
+    
 
     const tickTock = () => {
         setLocalClock(localTime.toLocaleString({hour: 'numeric', minute: 'numeric', second: 'numeric'}));
@@ -35,16 +33,9 @@ const OtherTime = ({countryCode}) => {
     }, [colClock])
     
     
-    useEffect(() => {
+    /*useEffect(() => {
         console.log("colClock updated", colClock)
-    }, [colClock])
-    
-
-
-
-
-
-
+    }, [colClock])*/
 
     return( <div>
             <Card className="otherDateInformation" style={{ width: '18rem' }}>

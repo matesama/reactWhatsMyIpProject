@@ -9,8 +9,8 @@ const CountryInformation =  ({countryCode}) => {
     
     const fetchCountryData = async () => {
         try {
-            const key = import.meta.env.VITE_COUNTRYLAYER_KEY;
-            const getCountryInfos = await axios.get(`http://api.countrylayer.com/v2/all?access_key=${key}`);
+            //const key = import.meta.env.VITE_COUNTRYLAYER_KEY;
+            const getCountryInfos = await axios.get(`https://restcountries.com/v3.1/all`);
             console.log(getCountryInfos);
 
             //if(!getCountryInfos) throw new Error(`Fetching data failed, due to ${getCountryInfos.status}`);
@@ -29,14 +29,11 @@ const CountryInformation =  ({countryCode}) => {
 
         //use filter to search for alpha2Code the two letter country code passed as prop {country}
       const countryInformation = countryData.filter((country)=> {
-        return country.alpha2Code === countryCode;
+        return country.cca2 === countryCode;
         } 
         );
         const specificCountryInformation = countryInformation[0]; 
        console.log(specificCountryInformation);
-    
-
-   //Ask: Why does it break it down so often?
 
     return(
         <div>
@@ -46,9 +43,9 @@ const CountryInformation =  ({countryCode}) => {
             <Card.Title>Country Information:</Card.Title>
             <Card.Img variant="top" src={`https://flagsapi.com/${countryCode}/flat/64.png`} />
             <ListGroup variant="flush">
-            <ListGroup.Item>Name: {specificCountryInformation.name}</ListGroup.Item>
+            <ListGroup.Item>Name: {specificCountryInformation.name.common}</ListGroup.Item>
             <ListGroup.Item>Region: {specificCountryInformation.region}</ListGroup.Item>
-            <ListGroup.Item>Capital: {specificCountryInformation.capital}</ListGroup.Item>
+            <ListGroup.Item>Capital: {specificCountryInformation.capital[0]}</ListGroup.Item>
             </ListGroup>
         </Card>
         : null}

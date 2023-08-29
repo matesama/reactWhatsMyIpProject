@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 
 const Map = ({lat, lng}) => {
     const position = [lat, lng]
-    console.log(position);
+    
     return <div>
       <h2>That is your Location:</h2>
         <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ minHeight: "50vh", minWidth: "50vw" }}>
