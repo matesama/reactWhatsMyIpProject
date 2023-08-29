@@ -39,7 +39,7 @@ const CountryInformation =  ({countryCode}) => {
         <div>
         {Object.keys(countryInformation).length > 0
         ?
-        <Card className="countryInformation" style={{ width: '18rem' }}>
+        <Card className="card-bordered"  style={{ width: '15rem' }}>
             <Card.Title>Country Information:</Card.Title>
             <Card.Img variant="top" src={`https://flagsapi.com/${countryCode}/flat/64.png`} />
             <ListGroup variant="flush">

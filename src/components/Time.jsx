@@ -36,7 +36,7 @@ const Time = ({countryCode}) => {
     }, [localClock])*/
     
     return( <div>
-        <Card className="localDateInformation" style={{ width: '18rem' }}>
+        <Card className="card-bordered" style={{ width: '15rem' }}>
             <Card.Title>Local Date in {countryCode.countryCode}:</Card.Title>
             <ListGroup variant="flush">
             <ListGroup.Item>Date: {localDate}</ListGroup.Item>

@@ -38,7 +38,7 @@ const OtherTime = ({countryCode}) => {
     }, [colClock])*/
 
     return( <div>
-            <Card className="otherDateInformation" style={{ width: '18rem' }}>
+            <Card className="otherDateInformation card-bordered" style={{ width: '15rem' }}>
             <Card.Title>Date in CO:</Card.Title>
             <Card.Img variant="top" src={`https://flagsapi.com/CO/flat/64.png`} />
             <ListGroup variant="flush">

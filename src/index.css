@@ -29,10 +29,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #9dc0de;
-  background-color: #9dc0de;
-  background-color: #d3f0fc;  
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #d3f0fc 4px ), repeating-linear-gradient( #45d2e955, #45d2e9 );
+  background-color: #025cab;
+  background-color: #023867;
+  background-color: #001e2a;  
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #4d6169 4px ), repeating-linear-gradient( #45d2e955, #45d2e9 );
 }
 
 h1 {
@@ -64,9 +64,23 @@ button:focus-visible {
 }
 
 .full {
-  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
   border-radius: 5%;
+  background-color: #9dc0de;
+  background-color: #9dc0de;
+  background-color: #d3f0fc;  
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #d3f0fc 4px ), repeating-linear-gradient( #45d2e955, #45d2e9 );
 }
+
+.card-bordered {
+  border-radius: 5% !important;
+  margin: 2% !important;
+}
+
+
 
 
 @media (prefers-color-scheme: light) {

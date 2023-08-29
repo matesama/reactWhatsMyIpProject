@@ -64,7 +64,7 @@ function App() {
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className="w-100">
         {lat !== 0 && lng !== 0 ?  
         <Map lat={lat} lng={lng}  />
         : null}
